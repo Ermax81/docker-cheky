@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+
+  lbc:
+    container_name: lbc
+    hostname: lbc
+    build:
+      context: .
+      dockerfile: ./Dockerfile_lbc
+    image: rpi4_ubuntu_cheky:trusty
+    ports:
+      - "9080:80/tcp"
+    volumes:
+      - './data/var:/var/www/html/var'
+      - './data/annonce:/var/www/html/static/media/annonce'
+    restart: always
+ 
+ 
+    
+
